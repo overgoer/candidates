@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13304ee9-9e5b-42f9-b2c0-08aee5c21841" name="Changes" comment="candidate model&#10;added .idea to git ignore">
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="13304ee9-9e5b-42f9-b2c0-08aee5c21841" name="Changes" comment="gradle fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/controller/CandidateRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/controller/RestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/service/CandidateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eddytester/model/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/model/Candidate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1768334640144</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="gradle fix">
+      <created>1768338912385</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768338912385</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +97,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <MESSAGE value="candidate model&#10;added .idea to git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="candidate model&#10;added .idea to git ignore" />
+    <MESSAGE value="gradle fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="gradle fix" />
   </component>
 </project>

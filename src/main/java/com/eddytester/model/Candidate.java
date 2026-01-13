@@ -1,6 +1,7 @@
 package com.eddytester.model;
 
 public class Candidate {
+    Long id;
     String name;
     Integer age;
     String status;
@@ -27,5 +28,13 @@ public class Candidate {
 
     public String getStatus(){
         return status;
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public void setId(Long id){
+        this.id = id;
     }
 }
