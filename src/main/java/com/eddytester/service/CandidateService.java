@@ -31,4 +31,8 @@ public class CandidateService {
             ++nextId;
             return newCandidate;
         }
+
+        public Candidate getCandidateById(Long id){
+        return storage.get(id);
+        }
 }
