@@ -1,25 +1,28 @@
 package com.eddytester.model;
 
+import java.time.Year;
+
 public class Candidate {
-    Long id;
-    String name;
-    Integer age;
-    String status;
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setName(String name) {
+    private String name;
+    private Integer birthYear;
+    private Integer age;
+    private String status;
+    public Candidate(String name, Integer birthYear){
         this.name = name;
+        this.birthYear = birthYear;
+        this.age = Year.now().getValue() - birthYear;
+        this.status = defineCandidateStatus(this.age);
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    private String defineCandidateStatus(Integer age){
+        if(age < 18){
+            return "minor";
+        } else if(age < 65){
+            return "candidate";
+        } else return "retired";
     }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public Integer getBirthYear() {
+        return birthYear;
     }
 
     public String getName(){
@@ -30,11 +33,9 @@ public class Candidate {
         return status;
     }
 
-    public Long getId(){
-        return id;
+    public Integer getAge(){
+        return age;
     }
 
-    public void setId(Long id){
-        this.id = id;
-    }
+
 }

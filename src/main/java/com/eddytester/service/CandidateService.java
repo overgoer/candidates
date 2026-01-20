@@ -1,6 +1,7 @@
 package com.eddytester.service;
 
 import com.eddytester.model.Candidate;
+import com.eddytester.model.CandidateDto;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -15,24 +16,16 @@ public class CandidateService {
     public CandidateService() {
     }
 
-    public void setStatus(Candidate candidate){
-        if(candidate.getAge()<18) candidate.setStatus("minor");
-        else if (candidate.getAge()<65) candidate.setStatus("candidate");
-        else candidate.setStatus("retired");
-    }
-
-        public Candidate createCandidate(String name, Integer age){
-            Candidate newCandidate = new Candidate();
-            newCandidate.setName(name);
-            newCandidate.setAge(age);
-            newCandidate.setId(nextId);
-            setStatus(newCandidate);
+        public CandidateDto createCandidate(String name, Integer birthYear){
+            Candidate newCandidate = new Candidate(name, birthYear);
             storage.put(nextId,newCandidate);
+            Long id = nextId;
             ++nextId;
-            return newCandidate;
+            return new CandidateDto(id, newCandidate);
         }
 
-        public Candidate getCandidateById(Long id){
-        return storage.get(id);
+        public CandidateDto getCandidateById(Long id){
+            Candidate candidate = storage.get(id);
+        return new CandidateDto(id, candidate);
         }
 }

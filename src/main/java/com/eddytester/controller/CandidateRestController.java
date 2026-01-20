@@ -1,6 +1,7 @@
 package com.eddytester.controller;
 
 import com.eddytester.model.Candidate;
+import com.eddytester.model.CandidateDto;
 import com.eddytester.service.CandidateService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,16 +16,16 @@ public class CandidateRestController{
     }
 
     @PostMapping("/candidate")
-    public Candidate createCandidate(
+    public CandidateDto createCandidate(
             @RequestBody Candidate candidateRequest){
                 return candidateService.createCandidate(
                     candidateRequest.getName(),
-                    candidateRequest.getAge()
+                    candidateRequest.getBirthYear()
                 );
     }
 
     @GetMapping("/candidate/{id}")
-    Candidate one(@PathVariable Long id){
+    CandidateDto one(@PathVariable Long id){
         return candidateService.getCandidateById(id);
     }
 }
