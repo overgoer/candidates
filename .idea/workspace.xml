@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13304ee9-9e5b-42f9-b2c0-08aee5c21841" name="Changes" comment="Post and Get methods&#10;Application build is running successful">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/model/CandidateDto.java" afterDir="false" />
+    <list default="true" id="13304ee9-9e5b-42f9-b2c0-08aee5c21841" name="Changes" comment="refactored model Candidate&#10;added CandidateDto&#10;changed responses models">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eddytester/controller/CandidateRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/controller/CandidateRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eddytester/model/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/model/Candidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eddytester/model/CandidateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/model/CandidateDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eddytester/service/CandidateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eddytester/service/CandidateService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1768344542960</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactored model Candidate&#10;added CandidateDto&#10;changed responses models">
+      <created>1768942679694</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768942679694</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,6 +122,7 @@
     <MESSAGE value="gradle fix" />
     <MESSAGE value="candidate service&#10;rest controller started" />
     <MESSAGE value="Post and Get methods&#10;Application build is running successful" />
-    <option name="LAST_COMMIT_MESSAGE" value="Post and Get methods&#10;Application build is running successful" />
+    <MESSAGE value="refactored model Candidate&#10;added CandidateDto&#10;changed responses models" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored model Candidate&#10;added CandidateDto&#10;changed responses models" />
   </component>
 </project>

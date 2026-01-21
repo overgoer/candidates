@@ -1,11 +1,13 @@
 package com.eddytester.model;
 
+import java.time.Year;
+
 public class CandidateDto {
-    Long id;
-    String name;
-    Integer birthDate;
-    Integer age;
-    String status;
+    private Long id;
+    private String name;
+    private Year birthDate;
+    private Integer age;
+    private String status;
 
     public CandidateDto(Long id, Candidate candidate){
         this.id = id;
@@ -23,7 +25,7 @@ public class CandidateDto {
         return name;
     }
 
-    public Integer getBirthDate() {
+    public Year getBirthYear() {
         return birthDate;
     }
 

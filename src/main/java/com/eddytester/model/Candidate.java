@@ -4,13 +4,13 @@ import java.time.Year;
 
 public class Candidate {
     private String name;
-    private Integer birthYear;
+    private Year birthYear;
     private Integer age;
     private String status;
-    public Candidate(String name, Integer birthYear){
+    public Candidate(String name, Year birthYear){
         this.name = name;
         this.birthYear = birthYear;
-        this.age = Year.now().getValue() - birthYear;
+        this.age = Year.now().getValue() - birthYear.getValue();
         this.status = defineCandidateStatus(this.age);
     }
 
@@ -21,7 +21,7 @@ public class Candidate {
             return "candidate";
         } else return "retired";
     }
-    public Integer getBirthYear() {
+    public Year getBirthYear() {
         return birthYear;
     }
 
@@ -36,6 +36,5 @@ public class Candidate {
     public Integer getAge(){
         return age;
     }
-
 
 }

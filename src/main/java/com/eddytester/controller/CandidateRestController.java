@@ -18,7 +18,7 @@ public class CandidateRestController{
     @PostMapping("/candidate")
     public CandidateDto createCandidate(
             @RequestBody Candidate candidateRequest){
-                return candidateService.createCandidate(
+                return candidateService.saveCandidate(
                     candidateRequest.getName(),
                     candidateRequest.getBirthYear()
                 );
