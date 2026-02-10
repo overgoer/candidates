@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.3.5'
     id 'io.spring.dependency-management' version '1.1.5'
+    id 'jacoco'
 }
 
 group = 'com.eddytester'
@@ -25,3 +26,24 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+}
+
+tasks.register("openJacocoReport") {
+    doLast {
+        // Use layout.buildDirectory instead of project.buildDir
+        def reportPath = "${layout.buildDirectory.get().asFile}/reports/jacoco/test/html/index.html"
+        if (new File(reportPath).exists()) {
+            println "JaCoCo Report: file://${reportPath}"
+        } else {
+            println "JaCoCo Report not found at: ${reportPath}"
+        }
+    }
+}
+
+tasks.jacocoTestReport.finalizedBy('openJacocoReport')

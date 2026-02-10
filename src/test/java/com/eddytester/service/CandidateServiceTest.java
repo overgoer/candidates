@@ -2,6 +2,7 @@ package com.eddytester.service;
 
 import com.eddytester.model.Candidate;
 import com.eddytester.model.CandidateDto;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.Year;
@@ -12,10 +13,21 @@ class CandidateServiceTest {
 
     public CandidateService candidateService;
 
+    @BeforeEach
+    void setUp() {
+        // Инициализация сервиса перед каждым тестом
+        candidateService = new CandidateService();
+    }
+
     @Test
     void validCandidateShouldBeSaved(){
         Candidate validCandidate = new Candidate("Jack", Year.of(1991));
-        CandidateDto createdCandidate = candidateService.saveCandidate(validCandidate.getName(), validCandidate.getBirthYear());
+
+        CandidateDto createdCandidate = candidateService.saveCandidate(
+                validCandidate.getName(),
+                validCandidate.getBirthYear()
+        );
+
         assertEquals(createdCandidate.getBirthYear(), validCandidate.getBirthYear());
         assertEquals(createdCandidate.getName(), validCandidate.getName());
         assertEquals(createdCandidate.getAge(), Year.now().getValue() - validCandidate.getBirthYear().getValue());
