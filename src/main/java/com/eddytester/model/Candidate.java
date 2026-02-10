@@ -1,16 +1,18 @@
 package com.eddytester.model;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.time.Year;
 
 public class Candidate {
-    private String name;
-    private Year birthYear;
-    private Integer age;
-    private String status;
-    public Candidate(String name, Year birthYear){
+    private final String name;
+    private final String birthDate;
+    private final Integer age;
+    private final String status;
+    public Candidate(String name, String birthDate){
         this.name = name;
-        this.birthYear = birthYear;
-        this.age = Year.now().getValue() - birthYear.getValue();
+        this.birthDate = birthDate;
+        this.age = Period.between(LocalDate.parse(this.birthDate), LocalDate.now()).getYears();
         this.status = defineCandidateStatus(this.age);
     }
 
@@ -21,8 +23,8 @@ public class Candidate {
             return "candidate";
         } else return "retired";
     }
-    public Year getBirthYear() {
-        return birthYear;
+    public String getBirthDate() {
+        return birthDate;
     }
 
     public String getName(){

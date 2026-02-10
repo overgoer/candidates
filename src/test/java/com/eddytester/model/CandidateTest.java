@@ -2,21 +2,33 @@
 
     import org.junit.jupiter.api.Test;
 
+    import java.time.LocalDate;
+    import java.time.Period;
     import java.time.Year;
+    import java.time.format.DateTimeFormatter;
 
     import static org.junit.jupiter.api.Assertions.*;
 
     class CandidateTest {
 
-        Candidate candidateAdult = new Candidate("candidateName", Year.of(1991));
+        String TWENTY_FIVE_YEARS_AGO =
+                LocalDate.now().minusYears(25).toString();
 
-        Candidate candidateMinor = new Candidate("candidateName", Year.of(2025));
+        String ONE_YEAR_AGO =
+                LocalDate.now().minusYears(1).toString();
 
-        Candidate candidateRetired = new Candidate("candidateName", Year.of(1900));
+        String NINETY_YEARS_AGO =
+                LocalDate.now().minusYears(90).toString();
+
+        Candidate candidateAdult = new Candidate("candidateName", TWENTY_FIVE_YEARS_AGO);
+
+        Candidate candidateMinor = new Candidate("candidateName", ONE_YEAR_AGO);
+
+        Candidate candidateRetired = new Candidate("candidateName", NINETY_YEARS_AGO);
 
         @Test
-        void birthYearShouldReturnUnchanged() {
-            assertEquals(1991, candidateAdult.getBirthYear().getValue());
+        void birthDateShouldReturnUnchanged() {
+            assertEquals(TWENTY_FIVE_YEARS_AGO, candidateAdult.getBirthDate());
         }
 
         @Test
@@ -25,22 +37,33 @@
         }
 
         @Test
-        void statusCandidateShouldReturnUnchanged() {
+        void statusShouldReturnUnchanged() {
             assertEquals("candidate", candidateAdult.getStatus());
         }
 
         @Test
-        void getAge() {
-            assertEquals(Year.now().getValue() - candidateAdult.getBirthYear().getValue() , candidateAdult.getAge());
+        void ageShouldReturnUnchanged() {
+            assertEquals(
+                    Period.between(
+                            LocalDate.parse(candidateAdult.getBirthDate()),
+                            LocalDate.now())
+                            .getYears(), candidateAdult.getAge()
+            );
         }
 
         @Test
-        void getSstatusMinorShouldReturnUnchangedtatus() {
+        void getStatusMinorShouldReturnUnchangedtatus() {
             assertEquals("minor", candidateMinor.getStatus());
         }
 
         @Test
-        void getSstatusRetiredShouldReturnUnchangedtatus() {
+        void getStatusRetiredShouldReturnUnchangedtatus() {
             assertEquals("retired", candidateRetired.getStatus());
         }
+
+        @Test
+        void getStatusAdultShouldReturnUnchangedtatus() {
+            assertEquals("minor", candidateMinor.getStatus());
+        }
+
     }

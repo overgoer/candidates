@@ -20,7 +20,7 @@ public class CandidateRestController{
             @RequestBody Candidate candidateRequest){
                 return candidateService.saveCandidate(
                     candidateRequest.getName(),
-                    candidateRequest.getBirthYear()
+                    candidateRequest.getBirthDate()
                 );
     }
 

@@ -4,6 +4,7 @@ import com.eddytester.model.Candidate;
 import com.eddytester.model.CandidateDto;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.Year;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -17,8 +18,8 @@ public class CandidateService {
     public CandidateService() {
     }
 
-        public CandidateDto saveCandidate(String name, Year birthYear){
-            Candidate newCandidate = new Candidate(name, birthYear);
+        public CandidateDto saveCandidate(String name, String birthDate){
+            Candidate newCandidate = new Candidate(name, birthDate);
             storage.put(nextId,newCandidate);
             Long id = nextId;
             ++nextId;

@@ -5,6 +5,9 @@ import com.eddytester.model.CandidateDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.Period;
 import java.time.Year;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,16 +24,21 @@ class CandidateServiceTest {
 
     @Test
     void validCandidateShouldBeSaved(){
-        Candidate validCandidate = new Candidate("Jack", Year.of(1991));
+        Candidate validCandidate = new Candidate("Jack", "1991-01-01");
 
         CandidateDto createdCandidate = candidateService.saveCandidate(
                 validCandidate.getName(),
-                validCandidate.getBirthYear()
+                validCandidate.getBirthDate()
         );
 
-        assertEquals(createdCandidate.getBirthYear(), validCandidate.getBirthYear());
+        assertEquals(createdCandidate.getBirthDate(), validCandidate.getBirthDate());
         assertEquals(createdCandidate.getName(), validCandidate.getName());
-        assertEquals(createdCandidate.getAge(), Year.now().getValue() - validCandidate.getBirthYear().getValue());
+        assertEquals(
+                createdCandidate.getAge(),
+                Period.between(
+                        LocalDate.now(), LocalDate.parse(createdCandidate.getBirthDate()))
+                        .getYears()
+        );
         assertNotNull(createdCandidate.getId());
     }
     //тесты начал писать но вижу что покрытие не увеличивается. не понятно
