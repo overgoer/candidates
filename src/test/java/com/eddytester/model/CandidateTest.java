@@ -53,17 +53,17 @@
 
         @Test
         void getStatusMinorShouldReturnUnchangedtatus() {
-            assertEquals("Minor", candidateMinor.getStatus());
+            assertEquals(CandidateStatus.MINOR.statusValue, candidateMinor.getStatus());
         }
 
         @Test
         void getStatusRetiredShouldReturnUnchangedtatus() {
-            assertEquals("Retired", candidateRetired.getStatus());
+            assertEquals(CandidateStatus.RETIRED.statusValue, candidateRetired.getStatus());
         }
 
         @Test
         void getStatusAdultShouldReturnUnchangedtatus() {
-            assertEquals("Minor", candidateMinor.getStatus());
+            assertEquals(CandidateStatus.CANDIDATE.statusValue, candidateAdult.getStatus());
         }
 
     }
