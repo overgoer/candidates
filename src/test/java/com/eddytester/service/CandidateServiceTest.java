@@ -36,7 +36,7 @@ class CandidateServiceTest {
         assertEquals(
                 createdCandidate.getAge(),
                 Period.between(
-                        LocalDate.now(), LocalDate.parse(createdCandidate.getBirthDate()))
+                        LocalDate.parse(createdCandidate.getBirthDate()), LocalDate.now())
                         .getYears()
         );
         assertNotNull(createdCandidate.getId());
