@@ -18,10 +18,10 @@ public class Candidate {
 
     private String defineCandidateStatus(Integer age){
         if(age < 18){
-            return "minor";
+            return CandidateStatus.MINOR.statusValue;
         } else if(age < 65){
-            return "candidate";
-        } else return "retired";
+            return CandidateStatus.CANDIDATE.statusValue;
+        } else return CandidateStatus.RETIRED.statusValue;
     }
     public String getBirthDate() {
         return birthDate;
